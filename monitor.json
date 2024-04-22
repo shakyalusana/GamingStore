@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name":" Arcade monitor",
+        "price": 16800,
+        "image": "images/monitor1.jpg"
+    },
+    {
+        "id": 2,
+        "name":" Lahubia Monitor",
+        "price": 8200,
+        "image": "images/monitor2.jpg"
+    },
+    {
+        "id": 3,
+        "name":" Cervicia Monitor",
+        "price": 19900,
+        "image": "images/monitor3.jpg"
+    },
+    {
+        "id": 4,
+        "name":" Predator LMVC",
+        "price": 17500,
+        "image": "images/monitor4.jpg"
+    },
+    {
+        "id": 5,
+        "name":" Kornui S30",
+        "price": 18000,
+        "image": "images/monitor5.jpg"
+    },
+    {
+        "id": 6,
+        "name":" Samsung Aed",
+        "price": 19500,
+        "image": "images/monitor6.jpg"
+    },
+    {
+        "id": 7,
+        "name":" LG B6 A5",
+        "price": 16500,
+        "image": "images/monitor7.jpg"
+    },
+    {
+        "id": 8,
+        "name":" Asus DHI-LM22",
+        "price": 15000,
+        "image": "images/monitor8.jpg"
+    }
+
+]

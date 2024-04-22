@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name":" Razer Mouse",
+        "price": 900,
+        "image": "images/mouse1.jpg"
+    },
+    {
+        "id": 2,
+        "name":" Viper Mouse",
+        "price": 1050,
+        "image": "images/mouse9.jpg"
+    },
+    {
+        "id": 3,
+        "name":" Mini Mouse",
+        "price": 990,
+        "image": "images/mouse3.jpg"
+    },
+    {
+        "id": 4,
+        "name":" Logitech Mouse",
+        "price": 2020,
+        "image": "images/mouse4.jpg"
+    },
+    {
+        "id": 5,
+        "name":" Ryzen Mouse",
+        "price": 1800,
+        "image": "images/mouse5.jpg"
+    },
+    {
+        "id": 6,
+        "name":" Thor-x16 Mouse",
+        "price": 1050,
+        "image": "images/mouse6.jpg"
+    },
+    {
+        "id": 7,
+        "name":" Tarzon-10 Mouse",
+        "price": 1600,
+        "image": "images/mouse7.jpg"
+    },
+    {
+        "id": 8,
+        "name":" Amidir Mouse",
+        "price": 1300,
+        "image": "images/mouse8.jpg"
+    }
+
+]

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="addtocart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <section class="storeheader">
+        <nav>
+            <a href="index.html"><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">             
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="store.html">STORE</a></li>
+                    <li><a href="register.php">REGISTER</a></li>
+                </ul>             
+            </div>          
+        </nav>
+    </section>
+</header>
+<div class="container">
+    <header>
+        <div class="title">STORE</div>
+        <div class="icon-cart">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+            </svg>
+            <span>0</span>
+        </div>
+    </header>
+    <div class="listProduct">
+        <div class="product">
+            <div class="product-img">
+                <img src="images/chair1.jpg" alt="Funko Gaming Chair">
+            </div>
+            <div class="product-details">
+                <h2>Funko Gaming Chair</h2>
+                <p class="price">Rs. 9000</p>
+                <button class="addCart" onclick="addToCart('Funko Gaming Chair', 9000, 'images/chair1.jpg')">Add To Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-img">
+                <img src="images/chair2.jpg" alt="Iskur Gaming Chair">
+            </div>
+            <div class="product-details">
+                <h2>Iskur Gaming Chair</h2>
+                <p class="price">Rs. 10500</p>
+                <button class="addCart" onclick="addToCart('Iskur Gaming Chair', 10500, 'images/chair2.jpg')">Add To Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-img">
+                <img src="images/chair3.jpg" alt="Eenki Gaming Chair">
+            </div>
+            <div class="product-details">
+                <h2>Eenki Gaming Chair</h2>
+                <p class="price">Rs. 9900</p>
+                <button class="addCart" onclick="addToCart('Eenki Gaming Chair', 9900, 'images/chair3.jpg')">Add To Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-img">
+                <img src="images/chair4.jpg" alt="Mavix Gaming Chair">
+            </div>
+            <div class="product-details">
+                <h2>Mavix Gaming Chair</h2>
+                <p class="price">Rs. 8500</p>
+                <button class="addCart" onclick="addToCart('Mavix Gaming Chair', 8500, 'images/chair4.jpg')">Add To Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-img">
+                <img src="images/chair5.jpg" alt="Titanic Gaming Chair">
+            </div>
+            <div class="product-details">
+                <h2>Titanic Gaming Chair</h2>
+                <p class="price">Rs. 8000</p>
+                <button class="addCart" onclick="addToCart('Titanic Gaming Chair', 8000, 'images/chair5.jpg')">Add To Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-img">
+                <img src="images/chair6.jpg" alt="Noble Gaming Chair">
+            </div>
+            <div class="product-details">
+                <h2>Noble Gaming Chair</h2>
+                <p class="price">Rs. 10500</p>
+                <button class="addCart" onclick="addToCart('Noble Gaming Chair', 10500, 'images/chair6.jpg')">Add To Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-img">
+                <img src="images/chair7.jpg" alt="NRG Gaming Chair">
+            </div>
+            <div class="product-details">
+                <h2>NRG Gaming Chair</h2>
+                <p class="price">Rs. 12000</p>
+                <button class="addCart" onclick="addToCart('NRG Gaming Chair', 12000, 'images/chair7.jpg')">Add To Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-img">
+                <img src="images/chair8.jpg" alt="Razer Gaming Chair">
+            </div>
+            <div class="product-details">
+                <h2>Razer Gaming Chair</h2>
+                <p class="price">Rs. 10000</p>
+                <button class="addCart" onclick="addToCart('Razer Gaming Chair', 10000, 'images/chair8.jpg')">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cartTab">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="close-button svg-inline--fa fa-times fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
+        <path fill="currentColor" d="M232.971 256l113.941-113.941c9.373-9.373 9.373-24.569 0-33.941l-22.667-22.667c-9.357-9.357-24.522-9.375-33.901-.04L176 200.097 62.086 86.191c-9.379-9.335-24.544-9.317-33.901.04l-22.667 22.667c-9.373 9.373-9.373 24.569 0 33.941L119.029 256 5.088 369.941c-9.373 9.373-9.373 24.569 0 33.941l22.667 22.667c9.357 9.357 24.522 9.375 33.901.04L176 311.903l113.914 113.915c9.379 9.335 24.544 9.317 33.901-.04l22.667-22.667c9.373-9.373 9.373-24.569 0-33.941L232.971 256z"></path>
+    </svg>
+    <h1>Shopping Cart</h1>
+    <div class="listCart">
+    </div>
+    <div class="btn">
+        <button class="close">CLOSE</button>
+        <button class="checkOut" onclick="checkout()">Check Out</button>
+    </div>
+    <div class="total">
+        <h2>Total: <span id="cart-total">0.00</span></h2>
+    </div>
+</div>
+<script src="store.js"></script>
+</body>
+</html>

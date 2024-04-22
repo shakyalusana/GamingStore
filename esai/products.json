@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Gaming Chair",
+        "price": 5000,
+        "image": "gaming_chair.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Sona Gaming Chair",
+        "price": 5890,
+        "image": ""
+    }
+]

@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name":" Motin 10x",
+        "price": 1200,
+        "image": "images/headphone1.jpg"
+    },
+    {
+        "id": 2,
+        "name":" Gogen-2",
+        "price": 1050,
+        "image": "images/headphone2.jpg"
+    },
+    {
+        "id": 3,
+        "name":" Gwen 10",
+        "price": 950,
+        "image": "images/headphone3.jpg"
+    },
+    {
+        "id": 4,
+        "name":" Amddir",
+        "price": 2050,
+        "image": "images/headphone4.jpg"
+    },
+    {
+        "id": 5,
+        "name":" Jwala",
+        "price": 1800,
+        "image": "images/headphone5.jpg"
+    },
+    {
+        "id": 6,
+        "name":" Lajus",
+        "price": 1050,
+        "image": "images/headphone6.jpg"
+    },
+    {
+        "id": 7,
+        "name":" AHASHAH-10",
+        "price": 1600,
+        "image": "images/headphone7.jpg"
+    },
+    {
+        "id": 8,
+        "name":" Atank",
+        "price": 1300,
+        "image": "images/headphone8.jpg"
+    }
+
+]

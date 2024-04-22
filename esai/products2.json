@@ -1,0 +1,14 @@
+[
+    {
+        "id": 2,
+        "name": "Headphone",
+        "price": 3000,
+        "image": "headphone.jpg"
+    },
+    {
+        "id": 2,
+        "name": "jsfdd Headphone",
+        "price": 3890,
+        "image": ""
+    }
+]

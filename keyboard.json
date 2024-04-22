@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name":" Arcane Keyboard",
+        "price": 6800,
+        "image": "images/keyboard1.jpg"
+    },
+    {
+        "id": 2,
+        "name":" Viperian Keyboard",
+        "price": 8200,
+        "image": "images/keyboard9.jpg"
+    },
+    {
+        "id": 3,
+        "name":" Ceria Keyboard",
+        "price": 9900,
+        "image": "images/keyboard3.jpg"
+    },
+    {
+        "id": 4,
+        "name":" Mirage Keyboard",
+        "price": 7500,
+        "image": "images/keyboard4.jpg"
+    },
+    {
+        "id": 5,
+        "name":" Ryzen Keyboard",
+        "price": 8000,
+        "image": "images/keyboard5.jpg"
+    },
+    {
+        "id": 6,
+        "name":" Thorex Keyboard",
+        "price": 9500,
+        "image": "images/keyboard6.jpg"
+    },
+    {
+        "id": 7,
+        "name":" Zenith Keyboard",
+        "price": 6500,
+        "image": "images/keyboard7.jpg"
+    },
+    {
+        "id": 8,
+        "name":" Nebula Keyboard",
+        "price": 5000,
+        "image": "images/keyboard8.jpg"
+    }
+
+]

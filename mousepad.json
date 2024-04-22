@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name":"Green Momin",
+        "price": 500,
+        "image": "images/mousepad1.jpg"
+    },
+    {
+        "id": 2,
+        "name":"Razer Fragged Alpha Control",
+        "price": 150,
+        "image": "images/mousepad2.jpg"
+    },
+    {
+        "id": 3,
+        "name":" Extended 90CM X 40CM Large ",
+        "price": 190,
+        "image": "images/mousepad3.jpg"
+    },
+    {
+        "id": 4,
+        "name":" Fantech Vigil",
+        "price": 220,
+        "image": "images/mousepad4.jpg"
+    },
+    {
+        "id": 5,
+        "name":" SPONGEBOB Edition Pro ",
+        "price": 180,
+        "image": "images/mousepad5.jpg"
+    },
+    {
+        "id": 6,
+        "name":" Pink Edition Pro",
+        "price": 105,
+        "image": "images/mousepad6.jpg"
+    },
+    {
+        "id": 7,
+        "name":" Ranger Edition",
+        "price": 100,
+        "image": "images/mousepad7.jpg"
+    },
+    {
+        "id": 8,
+        "name":" DORAEMON Printed Design",
+        "price": 130,
+        "image": "images/mousepad8.jpg"
+    }
+
+]

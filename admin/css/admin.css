@@ -1,0 +1,592 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+:root {
+  --nav-color: #592321;
+  --font-color-white: #fff;
+  --body-color: #e7e0c3;
+  --font-color-black: #000;
+  --faded-white: #dcdcdc;
+  --yellow: #fef27c;
+  --grey: #F44611;
+}
+body {
+  display: flex;
+  justify-content: flex-start;
+}
+nav {
+  position: relative;
+  display: flex;
+  background-color: var(--nav-color);
+}
+nav .nav-banner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+nav .nav-banner .nav-logo {
+  padding-top: 60px;
+  margin: 0 auto;
+}
+nav .nav-banner .nav-logo span {
+  color: #fff;
+  font-weight: 800;
+  font-size: 24px;
+  text-align: center;
+}
+nav .nav-banner .profile-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 80px;
+}
+nav .nav-banner .profile-content span {
+  margin: 20px 0;
+  color: var(--font-color-white);
+  font-size: 20px;
+}
+nav .nav-banner .profile-content button {
+  background: transparent;
+  border: 1px solid #e7e0c3;
+  color: #fff;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+nav .nav-banner .profile-content button:hover {
+  border-color: #000;
+  background-color: var(--body-color);
+  color: var(--font-color-black);
+}
+nav .nav-banner .profile-content img {
+  background-color: gray;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+nav .nav-banner .nav-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+nav .nav-banner .nav-options span {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+}
+nav .nav-banner .nav-options span i {
+  color: var(--font-color-white);
+  padding-right: 20px;
+}
+nav .nav-banner .nav-options span a {
+  text-align: left;
+  color: var(--font-color-white);
+  text-decoration: none;
+  font-size: 20px;
+}
+nav .nav-banner .nav-mode {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+nav .nav-banner .nav-mode button {
+  position: absolute;
+  bottom: 60px;
+  background-color: #fff;
+  height: 40px;
+  width: 100px;
+  border-radius: 30px;
+  border: none;
+}
+nav .nav-banner .nav-mode span {
+  display: block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+nav .nav-banner .nav-mode span:after {
+  content: "";
+  display: block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  top: 0px;
+  right: -60px;
+}
+/* header container starts */
+header .login-container {
+  background-color: var(--grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+header .login-container .haha {
+  background-color: #dcdcdc;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .login-container .haha form {
+  display: flex;
+  flex-direction: column;
+}
+header .login-container .haha form label {
+  padding-top: 1rem;
+  font-size: 18px;
+}
+header .login-container .haha form input {
+  padding: 0.5rem 1rem;
+  width: 350px;
+}
+header .login-container .haha form input[type="submit"] {
+  margin-top: 1rem;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  position: relative;
+}
+.content::after {
+  content: "";
+  position: absolute;
+  top: 33px;
+  left: 30px;
+  width: 150px;
+  height: 2px;
+  background-color: #39393941;
+}
+.content::before {
+  content: "";
+  position: absolute;
+  top: 33px;
+  right: 30px;
+  width: 150px;
+  height: 2px;
+  background-color: #39393941;
+}
+/* header container ends */
+
+/* header starts */
+header {
+  flex-basis: 100%;
+}
+header .hospital-search-recent {
+  padding: 0 30px;
+}
+header .hospital-search-recent .hospital-hero-section {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+header .hospital-search-recent .hospital-hero-section img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: 80% 23%;
+}
+header .hospital-content {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--nav-color);
+}
+header .hospital-content .hospital-search input {
+  padding: 10px 30px;
+  width: 600px;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid grey;
+  background-color: #35383f46;
+  color: #fff;
+}
+header .hospital-content .hospital-search input::placeholder {
+  color: #fff;
+}
+header .hospital-content .hospital-search input:focus {
+  border: 1px solid grey !important;
+}
+header .hospital-content .hospital-search .bi-search {
+  color: #fff;
+  background-color: var(--grey);
+  padding: 14px 20px;
+  font-size: 14px;
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+header .hospital-content .login-content {
+  display: flex;
+  flex-direction: row;
+}
+header .hospital-content .login-content a {
+  text-decoration: none;
+  background-color: var(--grey);
+  padding: 10px 20px;
+  margin-right: 10px;
+  color: var(--font-color-white);
+  letter-spacing: 1px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+header .hospital-content .login-content a:hover {
+  color: var(--font-color-black);
+  background-color: var(--faded-white);
+}
+header .hospital-contents {
+  padding: 0 30px;
+  margin-top: 30px;
+}
+header .hospital-contents .contents {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header .hospital-contents .contents .hospital-content-card {
+  background-color: var(--nav-color);
+  padding: 20px 30px;
+  border-radius: 15px;
+  width: 33%;
+}
+header .hospital-contents .contents .hospital-content-card:first-child {
+  background-color: var(--grey);
+}
+header .hospital-contents .contents .hospital-content-card .analysis {
+  display: flex;
+  justify-content: space-between;
+}
+header .hospital-contents .contents .hospital-content-card .analysis span {
+  color: var(--font-color-white);
+}
+header .hospital-contents .contents .hospital-content-card .analysis a {
+  color: var(--font-color-white);
+  text-decoration: none;
+}
+header .hospital-contents .contents .hospital-content-card .hospital-analysis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  position: relative;
+}
+header
+  .hospital-contents
+  .contents
+  .hospital-content-card
+  .hospital-analysis
+  span {
+  color: var(--font-color-white);
+  font-size: 32px;
+  z-index: 2;
+}
+header
+  .hospital-contents
+  .contents
+  .hospital-content-card
+  .hospital-analysis
+  span:after {
+  content: "";
+  height: 160px;
+  width: 160px;
+  position: absolute;
+  display: flex;
+  border-radius: 50%;
+  top: -5px;
+  right: 134px;
+  border-width: 15px;
+  border-style: dashed;
+  border-color: red green blue yellow;
+}
+header
+  .hospital-contents
+  .contents
+  .hospital-content-card
+  .hospital-analysis
+  span
+  a {
+  z-index: 12;
+  position: relative;
+  text-decoration: none;
+  color: var(--font-color-white);
+}
+header .hospital-contents .contents .hospital-content-card .analysis-data {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+header
+  .hospital-contents
+  .contents
+  .hospital-content-card
+  .analysis-data
+  .data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header
+  .hospital-contents
+  .contents
+  .hospital-content-card
+  .analysis-data
+  .data
+  span {
+  flex-basis: 10%;
+}
+
+header .hospital-contents .contents .hospital-content-card .analysis-report {
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+header
+  .hospital-contents
+  .contents
+  .hospital-content-card
+  .analysis-report
+  img {
+  height: 300px;
+  width: 300px;
+}
+header .hospital-contents .contents .hospital-content-card .hospital-schedule {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+header
+  .hospital-contents
+  .contents
+  .hospital-content-card
+  .hospital-schedule
+  .schedule {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--yellow);
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+header
+  .hospital-contents
+  .contents
+  .hospital-content-card
+  .hospital-schedule
+  .schedule
+  span {
+  font-size: 24px;
+}
+header
+  .hospital-contents
+  .contents
+  .hospital-content-card
+  .hospital-schedule
+  .schedule
+  b {
+  font-size: 24px;
+}
+.content--table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 90%;
+}
+.content--table table {
+  border-collapse: collapse;
+}
+.content--table table tr th,
+.content--table table tr td {
+  border: 1px solid #000;
+  padding: 10px 20px;
+}
+.content--table table tr td button {
+  padding: 10px 20px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #000;
+}
+
+/* setting css */
+.section-setting {
+  margin: 20px;
+}
+.section-setting-title {
+  margin-bottom: 2rem;
+}
+.section-setting-title h3 {
+  margin: 0;
+}
+.section-setting-card {
+  padding: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-direction: column;
+}
+.card-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-title button {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.card-title button i {
+  display: flex;
+  font-size: 18px;
+  margin-right: 5px;
+}
+.popup {
+  width: 400px;
+  background-color: var(--nav-color);
+  position: absolute;
+  border-radius: 6px;
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+}
+.open-popup {
+  visibility: visible;
+}
+.popup .setting-title {
+  padding: 10px 20px;
+  border-bottom: 1px solid #b1b1b1;
+  margin-bottom: 20px;
+}
+.popup .setting-title h2 {
+  color: #fff;
+  margin: 0;
+}
+.popup .setting-form {
+  padding: 0 20px;
+}
+.popup .setting-form .setting-form-site-title,
+.popup .setting-form .setting-form-about-us {
+  display: flex;
+  flex-direction: column;
+}
+.setting-form .setting-contacts-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.setting-contacts-form-feature {
+  margin-top: 10px;
+  border-top: 1px solid #b1b1b1;
+  padding-top: 10px;
+}
+.setting-contacts-form-feature label {
+  margin-left: 5px;
+}
+.setting-contacts-form-feature .form-feature {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.setting-contacts-form-feature .feature-image {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.setting-contacts-form-feature .feature-image input {
+  margin-top: 4px;
+  color: #fff;
+}
+.setting-contacts-form-feature .feature-image label span {
+  color: #ff0000;
+}
+.popup .setting-form form > div label {
+  color: #fff;
+}
+.setting-form-site-title {
+  margin-bottom: 20px;
+}
+.setting-form-site-title label {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+.setting-form-site-title input {
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 5px;
+}
+.setting-button {
+  padding: 10px 20px;
+  border-top: 1px solid #b1b1b1;
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+}
+.setting-button button:first-child {
+  margin-right: 10px;
+  background-color: #35383f;
+}
+.card-content {
+  margin-top: 10px;
+}
+.card-content-title {
+  margin-bottom: 5px;
+}
+.card-content-title h6 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+}
+.card-content-text p {
+  margin: 0;
+  font-weight: 400;
+}
+.card-content table thead tr th,
+.card-content table tbody tr td {
+  border: 2px solid #6262629b;
+  padding-left: 10px;
+}
+.card-content table tbody tr td button {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.card-content table tbody tr td button i {
+  color: rgb(4, 109, 255);
+}
+.card-content table {
+  border: 2px solid #000;
+}

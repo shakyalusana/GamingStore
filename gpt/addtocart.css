@@ -1,0 +1,118 @@
+/* AddToCart CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.product-img img {
+    width: 200px;
+    height: auto;
+}
+
+.product-details {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.icon-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.icon-cart svg {
+    width: 30px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.cartTab {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-top: 2px solid #333;
+    border-left: 2px solid #333;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.cartTab.show {
+    transform: translateX(0);
+}
+
+.cartTab .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.cartTab .cart-details {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.cart-heading {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.cart-total h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.cart-total button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-total button:hover {
+    background-color: #555;
+}
