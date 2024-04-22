@@ -4,24 +4,10 @@ require('include/db.php');
 require('include/essentials.php');
 // edit_feature
 if(isset($_POST['submit'])){
-    $f_id = isset($_GET['f_id']) ;
-    $Vehicle_title=$_POST['Vehicle_title'];
-    $Vehicle_brand=$_POST['Vehicle_brand'];
-    $Price=$_POST['Price'];
-    $Fuel_type=$_POST['Fuel_type'];
-    $Model_year=$_POST['Model_year'];
-    $Seating_capacity=$_POST['Seating_capacity'];
-    $Engine=$_POST['Engine'];
-    $Torque=$_POST['Torque'];
-    $Top_speed=$_POST['Top_speed'];
-    $Power=$_POST['Power'];
-    $Transmission=$_POST['Transmission'];
-    $Drive_type=$_POST['Drive_type'];
-    $Quantity=$_POST['Quantity'];
-    $file_name1=$_FILES['Car_image1']['name'];
-    $file_name2=$_FILES['Car_image2']['name'];
-    $file_name3=$_FILES['Car_image3']['name'];
-    $file_name4=$_FILES['Car_image4']['name'];
+    $id = isset($_GET['id']) ;
+    $name=$_POST['name'];
+    $price=$_POST['price'];
+    $file_name1=$_FILES['image']['name'];
     // $tempname1=$_FILES['Car_image1']['temp_name'];
     // $tempname2=$_FILES['Car_image2']['temp_name'];
     // $tempname3=$_FILES['Car_image3']['temp_name'];
@@ -29,7 +15,7 @@ if(isset($_POST['submit'])){
 
 
 
-    $query=mysqli_query($con,"UPDATE `car_feature` SET `Vehicle_title`='$Vehicle_title',`Vehicle_brand`='$Vehicle_brand',`Price`='$Price',`Fuel_type`='$Fuel_type',`Model_year`='$Model_year',`Seating_capacity`='$Seating_capacity',`Engine`='$Engine',`Torque`='$Torque',`Top_speed`='$Top_speed',`Power`='$Power',`Transmission`='$Transmission',`Drive_type`='$Drive_type',`Quantity`='$Quantity',`Car_image1`='$file_name1',`Car_image2`='$file_name2',`Car_image3`='$file_name3',`Car_image4`='$file_name4' WHERE `f_id`=$f_id");
+    $query=mysqli_query($con,"UPDATE `products` SET `name`='$name',`price`='$price',`image`='$file_name1' WHERE `id`=$id");
 
 
     if ($query) {
@@ -37,7 +23,7 @@ if(isset($_POST['submit'])){
     } else {
       echo "Failed to Update data.";
     } 
-    header('Location: /projects/carrental/admin/feature.php');
+    header('Location: /GamingStore/admin/feature.php');
   }
 
 ?>
@@ -101,7 +87,7 @@ if(isset($_POST['submit'])){
         }
         .setting-form-site-title input{
             border: 1px solid #000;
-            color: #000;
+            color: #000 !important;
         }
         .setting-form-site-title{
             display: flex;
@@ -160,104 +146,30 @@ if(isset($_POST['submit'])){
                      <div class="setting-form">
                         <form id="features_edit_form" method="post"  enctype="multipart/form-data"> 
                         <?php
-                        $f_id = isset($_GET['f_id']) ? $_GET['f_id'] : null;
-                        echo $f_id;
-                        $ret=mysqli_query($con,"SELECT * from  `car_feature` where `f_id`=$f_id");
+                        $id = isset($_GET['id']) ? $_GET['id'] : null;
+                        echo $id;
+                        $ret=mysqli_query($con,"SELECT * from  `products` where `id`=$id");
                         while ($row=mysqli_fetch_array($ret)) {
                         
                     
                         ?>
                         <div class="setting-contacts-form">
                             <div class="setting-form-left-side">
-                            <div class="setting-form-site-title">
-                                <label>Vehicle Title</label>
-                                <input type="text" name="Vehicle_title" id="Vehicle_title" value="<?php  echo $row['Vehicle_title'];?>">
-                            </div>
-                            <div class="setting-form-site-title">
-                                <label>Vehicle Brand</label>
-                                <input type="text" name="Vehicle_brand" id="Vehicle_brand" value="<?php  echo $row['Vehicle_brand'];?>">
-                            </div>
-                            <div class="setting-form-site-title">
-                                <label>Per Day Price</label>
-                                <input type="number" name="Price" id="Price" value="<?php  echo $row['Price'];?>">
-                            </div>
-                            </div>
-                            <div class="setting-form-right-side">
-                            <div class="setting-form-site-title">
-                                <label>Fuel Type</label>
-                                <input type="text" name="Fuel_type" id="Fuel_type" value="<?php  echo $row['Fuel_type'];?>">
-                            </div>  
-                            <div class="setting-form-site-title">
-                                <label>Model Year</label>
-                                <input type="number" name="Model_year" id="Model_year" value="<?php  echo $row['Model_year'];?>">
-                            </div>
-                            <div class="setting-form-site-title">
-                                <label>Seating Capacity</label>
-                                <input type="number " name="Seating_capacity" id="Seating_capacity" value="<?php  echo $row['Seating_capacity'];?>" >
-                            </div>
+                              <div class="setting-form-site-title">
+                                  <label>Product Name</label>
+                                  <input type="text" name="name" id="name" value="<?php  echo $row['name'];?>">
+                              </div>
+                              <div class="setting-form-site-title">
+                                  <label>Product Price</label>
+                                  <input type="number" name="price" id="price" value="<?php  echo $row['price'];?>">
+                              </div>
+                              <div class="setting-form-site-title">
+                                  <label>Product Image</label>
+                                  <input type="file" name="image" id="image" value="<?php  echo $row['image'];?>">
+                              </div>
                             </div>
                         </div>
-                        <div class="setting-contacts-form-feature">
-                        <div class="form-feature">
-                          <div class="setting-form-site-title">
-                            <label>Engine Unit(cc)</label>
-                            <input type="number " name="Engine" id="Engine" value="<?php  echo $row['Engine'];?>" >
-                          </div>
-                          <div class="setting-form-site-title">
-                            <label>Torque Unit(Nm)</label>
-                            <input type="number " name="Torque" id="Torque" value="<?php  echo $row['Torque'];?>" >
-                          </div>
-                          <div class="setting-form-site-title">
-                            <label>Top Speed Unit(kmph)</label>
-                            <input type="number " name="Top_speed" id="Top_speed" value="<?php  echo $row['Top_speed'];?>" >
-                          </div>
-                        </div>
-                        <div class="form-feature">
-                          <div class="setting-form-site-title">
-                            <label>Power Unit(bhp)</label>
-                            <input type="number " name="Power" id="Power" value="<?php  echo $row['Power'];?>" >
-                          </div>
-                          <div class="setting-form-site-title">
-                            <label>Transmission</label>
-                            <input type="text" name="Transmission" id="Transmission" value="<?php  echo $row['Transmission'];?>" >
-                          </div>
-                          <div class="setting-form-site-title">
-                            <label>Drive Type Unit(WD)</label>
-                            <input type="number " name="Drive_type" id="Drive_type" value="<?php  echo $row['Drive_type'];?>" >
-                          </div>
-                        </div>
-                        <div class="form-feature">
-                          <div class="setting-form-site-title">
-                            <label>Quantity</label>
-                            <input type="number " name="Quantity" id="Quantity" value="<?php  echo $row['Quantity'];?>" >
-                          </div>
-                          
-                        </div>
-                        </div>
-                        <div class="setting-contacts-form-feature">
-                            <div class="form-feature">
-                            <div class="feature-image">
-                                <label>Image 1 <span>*</span></label>
-                                <input type="file" name="Car_image1" id="Vehicle_img_1">
-                            </div>
-                            <div class="feature-image">
-                                <label>Image 2 <span>*</span></label>
-                                <input type="file" name="Car_image2" id="Car_image2">
-                            </div>
-                            
-                            </div>
-                            <div class="form-feature">
-                            <div class="feature-image">
-                                <label>Image 3 <span>*</span></label>
-                                <input type="file" name="Car_image3" id="Car_image3">
-                            </div>
-                            <div class="feature-image">
-                                <label>Image 4 <span>*</span></label>
-                                <input type="file" name="Car_image4" id="Car_image4">
-                            </div>
-                            
-                            </div>              
-                        </div>
+                        
                     <?php
                             
                         }

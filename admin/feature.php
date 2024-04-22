@@ -5,23 +5,9 @@
   session_regenerate_id(true);
 
   if(isset($_POST['add_facility'])){
-    $Vehicle_title=$_POST['Vehicle_title'];
-    $Vehicle_brand=$_POST['Vehicle_brand'];
-    $Price=$_POST['Price'];
-    $Fuel_type=$_POST['Fuel_type'];
-    $Model_year=$_POST['Model_year'];
-    $Seating_capacity=$_POST['Seating_capacity'];
-    $Engine=$_POST['Engine'];
-    $Torque=$_POST['Torque'];
-    $Top_speed=$_POST['Top_speed'];
-    $Power=$_POST['Power'];
-    $Transmission=$_POST['Transmission'];
-    $Drive_type=$_POST['Drive_type'];
-    $Quantity=$_POST['Quantity'];
-    $file_name1=$_FILES['Car_image1']['name'];
-    $file_name2=$_FILES['Car_image2']['name'];
-    $file_name3=$_FILES['Car_image3']['name'];
-    $file_name4=$_FILES['Car_image4']['name'];
+    $name=$_POST['name'];
+    $price=$_POST['price'];
+    $file_name1=$_FILES['image']['name'];
     // $tempname1=$_FILES['Car_image1']['temp_name'];
     // $tempname2=$_FILES['Car_image2']['temp_name'];
     // $tempname3=$_FILES['Car_image3']['temp_name'];
@@ -29,7 +15,7 @@
 
 
 
-    $query=mysqli_query($con,"INSERT INTO `car_feature`(`Vehicle_title`, `Vehicle_brand`, `Price`, `Fuel_type`, `Model_year`, `Seating_capacity`, `Engine`, `Torque`, `Top_speed`, `Power`, `Transmission`, `Drive_type`, `Quantity`, `Car_image1`, `Car_image2`, `Car_image3`, `Car_image4`) VALUES ('$Vehicle_title','$Vehicle_brand','$Price','$Fuel_type','$Model_year','$Seating_capacity','$Engine','$Torque','$Top_speed','$Power','$Transmission','$Drive_type','$Quantity','$file_name1','$file_name2','$file_name3','$file_name4')");
+    $query=mysqli_query($con,"INSERT INTO `products`(`name`, `price`,`image`) VALUES ('$name','$price','$file_name1')");
 
 
     if ($query) {
@@ -37,7 +23,7 @@
     } else {
       echo "Failed to insert data.";
     } 
-    header('Location: /projects/carrental/admin/feature.php');
+    header('Location: /GamingStore/admin/feature.php');
   }
 
   
@@ -179,95 +165,18 @@
                       <div class="setting-contacts-form">
                         <div class="setting-form-left-side">
                           <div class="setting-form-site-title">
-                            <label>Vehicle Title</label>
-                            <input type="text" name="Vehicle_title" id="Vehicle_title" required>
+                            <label>Product Name</label>
+                            <input type="text" name="name" id="name" required>
                           </div>
                           <div class="setting-form-site-title">
-                            <label>Vehicle Brand</label>
-                            <input type="text" name="Vehicle_brand" id="Vehicle_brand" required>
+                            <label>Product Price</label>
+                            <input type="number" name="price" id="price" required>
                           </div>
                           <div class="setting-form-site-title">
-                            <label>Per Day Price</label>
-                            <input type="number" name="Price" id="Price" required>
+                            <label>Product Image</label>
+                            <input type="file" name="image" id="image" required>
                           </div>
                         </div>
-                        <div class="setting-form-right-side">
-                          <div class="setting-form-site-title">
-                            <label>Fuel Type</label>
-                            <input type="text" name="Fuel_type" id="Fuel_type" required>
-                          </div>  
-                          <div class="setting-form-site-title">
-                            <label>Model Year</label>
-                            <input type="number" name="Model_year" id="Model_year" required>
-                          </div>
-                          <div class="setting-form-site-title">
-                            <label>Seating Capacity</label>
-                            <input type="number " name="Seating_capacity" id="Seating_capacity" required>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="setting-contacts-form-feature">
-                        <div class="form-feature">
-                          <div class="setting-form-site-title">
-                            <label>Engine Unit(cc)</label>
-                            <input type="number " name="Engine" id="Engine" required>
-                          </div>
-                          <div class="setting-form-site-title">
-                            <label>Torque Unit(Nm)</label>
-                            <input type="number " name="Torque" id="Torque" required>
-                          </div>
-                          <div class="setting-form-site-title">
-                            <label>Top Speed Unit(kmph)</label>
-                            <input type="number " name="Top_speed" id="Top_speed" required>
-                          </div>
-                        </div>
-                        <div class="form-feature">
-                          <div class="setting-form-site-title">
-                            <label>Power Unit(bhp)</label>
-                            <input type="number " name="Power" id="Power" required>
-                          </div>
-                          <div class="setting-form-site-title">
-                            <label>Transmission</label>
-                            <input type="text" name="Transmission" id="Transmission" required>
-                          </div>
-                          <div class="setting-form-site-title">
-                            <label>Drive Type Unit(WD)</label>
-                            <input type="number " name="Drive_type" id="Drive_type" required>
-                          </div>
-                        </div>
-                        <div class="form-feature">
-                          <div class="setting-form-site-title">
-                            <label>Quantity</label>
-                            <input type="number " name="Quantity" id="Quantity" required>
-                          </div>
-                          
-                        </div>
-                        
-                      </div>
-                      <div class="setting-contacts-form-feature">
-                        <div class="form-feature">
-                          <div class="feature-image">
-                            <label>Image 1 <span>*</span></label>
-                            <input type="file" name="Car_image1" id="Vehicle_img_1" required>
-                          </div>
-                          <div class="feature-image">
-                            <label>Image 2 <span>*</span></label>
-                            <input type="file" name="Car_image2" id="Car_image2" required>
-                          </div>
-                          
-                        </div>
-                        <div class="form-feature">
-                          <div class="feature-image">
-                            <label>Image 3 <span>*</span></label>
-                            <input type="file" name="Car_image3" id="Car_image3" required>
-                          </div>
-                          <div class="feature-image">
-                            <label>Image 4 <span>*</span></label>
-                            <input type="file" name="Car_image4" id="Car_image4" required>
-                          </div>
-                          
-                        </div>
-                      </div>
                       <div class="setting-button">
                         <button type="Reset" onclick="closePopup()" onclick="contacts_inp(contacts_data)">Cancel</button>
                         <button type="submit" name="add_facility">Submit</button>
@@ -280,38 +189,41 @@
 
 
             </div>
-            
+        </div>
             <div class="card-content">
               <table cellpadding="0" cellspacing="0" width="100%">
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Vehicle Title</th>
-                    <th>Brand</th>
-                    <th>Price Per day</th>
-                    <th>Fule Type</th>
-                    <th>Model Year</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Image</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php 
-                    $q="SELECT * FROM `car_feature` ORDER BY `f_id`";
-                    $data= mysqli_query($con,$q);
+                     $sql = "SELECT * FROM products";
+                     $result = $con->query($sql);
+ 
                     $i=1;
-                    while($row=mysqli_fetch_assoc($data)){
+                    if ($result === false) {
+                      die("Error executing query: " . $con->error);
+                  }
+
+                  // Check if products exist
+                  if ($result->num_rows > 0) {
+                      // Output data of each row
+                      while ($row = $result->fetch_assoc()) {
                       echo <<< query
                       <tr>
                         <td>$i</td>
-                        <td>$row[Vehicle_title]</td>
-                        <td>$row[Vehicle_brand]</td>
-                        <td>$row[Price]</td>
-                        <td>$row[Fuel_type]</td>
-                        <td>$row[Model_year]</td>
+                        <td>$row[name]</td>
+                        <td>$row[price]</td>
+                        <td><img src="$row[image]"></td>
                         <td>
-                          <button name="edit_facility"><a href='feature_update.php?f_id=($row[f_id])'>  <i class='bx bxs-edit'></i></a></button>
-                          <button type="submit" name="delid"><a href='delete.php?f_id
-                          =($row[f_id])'> <i class='bx bxs-trash'></i></a></button>
+                          <button name="edit_facility"><a href='feature_update.php?id=($row[id])'>  <i class='bx bxs-edit'></i></a></button>
+                          <button type="submit" name="delid"><a href='delete.php?id=($row[id])'> <i class='bx bxs-trash'></i></a></button>
 
                         </td>
                       </tr>
@@ -320,6 +232,10 @@
                       $i++;
 
                     }
+                  }else {
+                    echo "0 results";
+                }
+                    
                   
                   ?>
                 </tbody>

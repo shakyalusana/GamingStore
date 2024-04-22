@@ -5,10 +5,8 @@ require('include/db.php');
   adminLogin();
   session_regenerate_id(true);
 
-if(isset($_POST['upd_contacts'])){
+  if(isset($_POST['upd_contacts'])){
     $frm_data = filteration($_POST);
-    // print_r("From this point");
-    // print_r($frm_data['address']);
     
     $q = "UPDATE `contact_details` SET `address`=?, `pn1`=?, `pn2`=?, `email`=? WHERE `sr_no`=?";
     
@@ -18,18 +16,11 @@ if(isset($_POST['upd_contacts'])){
         $frm_data['pn1'], 
         $frm_data['pn2'], 
         $frm_data['email'], 
-        1
+        1 // Assuming sr_no is always 1
     ];
-    // print_r($values);
 
     $res = update($q, $values, 'ssssi');
-    
-    if($res !== false) {
-        echo "Data updated successfully";
-    } else {
-        echo "Error updating data: " . mysqli_error($con); // Ensure $con is defined properly
-    }
-    header('Location: /projects/carrental/admin/settings.php');
+   
 }
 
 
@@ -85,6 +76,12 @@ if(isset($_POST['upd_contacts'])){
       body{
         position: relative;
       }
+        
+  .setting-form .setting-contacts-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
     </style>
   </head>
   <body>
@@ -139,21 +136,29 @@ if(isset($_POST['upd_contacts'])){
                   <div class="setting-form">
                     <form id="contacts_s_form" method="post" action="?"> 
                       <div class="setting-contacts">
-                        <div class="setting-form">
-                          <div class="setting-form-site-title">
-                            <label>Address</label>
-                            <input type="text" name="address" id="address_inp">
-                          </div>  
-                          <div class="setting-form-site-title">
-                            <label>Phone Numbers (with country code)</label>
-                            <input type="text" name="pn1" id="pn1_inp" placeholder="Phone number-1" style="margin-bottom: 1rem;" >
-                            <input type="text" name="pn2" id="pn2_inp" placeholder="Phone number-2" >
-                          </div> 
-                          <div class="setting-form-site-title">
-                            <label>Email</label>
-                            <input type="email" name="email" id="email_inp">
-                          </div> 
-                        </div>
+                      <?php 
+                          $contact_details = select("SELECT * FROM `contact_details` WHERE `sr_no`=?", [1], 'i');
+                          $row = $contact_details->fetch_assoc();
+                          echo <<<HTML
+                              <div class="setting-form">
+                                  <div class="setting-form-site-title">
+                                      <label>Address</label>
+                                      <input type="text" name="address" id="address_inp" value="{$row['address']}">
+                                  </div>  
+                                  <div class="setting-form-site-title">
+                                      <label>Phone Numbers (with country code)</label>
+                                      <input type="text" name="pn1" id="pn1_inp" placeholder="Phone number-1" style="margin-bottom: 1rem;" value="{$row['pn1']}">
+                                      <input type="text" name="pn2" id="pn2_inp" placeholder="Phone number-2" value="{$row['pn2']}">
+                                  </div> 
+                                  <div class="setting-form-site-title">
+                                      <label>Email</label>
+                                      <input type="email" name="email" id="email_inp" value="{$row['email']}">
+                                  </div> 
+                              </div>
+                          HTML;
+                          ?>
+
+
                        
                       <div class="setting-button">
                         <button type="cancel" onclick="closePopup(); contacts_inp(contacts_data)">Cancel</button>

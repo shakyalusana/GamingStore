@@ -64,7 +64,7 @@
            
         </div>
         <div class="sign-up">
-            <p>Don't have account <a href="#">Sign up</a></p>
+            <p>Don't have account <a href="signup.php">Sign up</a></p>
         </div>
     </form>
         

@@ -11,7 +11,7 @@
   --font-color-black: #000;
   --faded-white: #dcdcdc;
   --yellow: #fef27c;
-  --grey: #F44611;
+  --grey: #f44611;
 }
 body {
   display: flex;
@@ -475,6 +475,7 @@ header
   border-radius: 6px;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   visibility: hidden;
 }
 .open-popup {
@@ -496,11 +497,6 @@ header
 .popup .setting-form .setting-form-about-us {
   display: flex;
   flex-direction: column;
-}
-.setting-form .setting-contacts-form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
 }
 .setting-contacts-form-feature {
   margin-top: 10px;
@@ -546,6 +542,9 @@ header
   outline: none;
   box-shadow: none;
   border-radius: 5px;
+}
+.setting-form-site-title input[type="file"] {
+  color: #fff;
 }
 .setting-button {
   padding: 10px 20px;

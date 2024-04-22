@@ -3,11 +3,11 @@ require('include/db.php');
 require('include/essentials.php');
 
 // Code for deletion
-if(isset($_GET['f_id'])) {
-    $rid = $_GET['f_id'];
-    $rid = preg_replace('/\D/', '', $rid);
-    echo "Deleting record with ID: " . $rid . "<br>"; // Debugging statement
-    $sql = mysqli_query($con, "DELETE FROM `car_feature` WHERE `f_id` = '$rid'");
+if(isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $id = preg_replace('/\D/', '', $id);
+    echo "Deleting record with ID: " . $id . "<br>"; // Debugging statement
+    $sql = mysqli_query($con, "DELETE FROM `products` WHERE `id` = '$id'");
     $affected_rows = mysqli_affected_rows($con); // Get the number of affected rows
     if ($sql) {
         if ($affected_rows > 0) {
