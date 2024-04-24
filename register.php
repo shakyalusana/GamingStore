@@ -50,7 +50,7 @@
             </section>
         </div>
         <div class="input-box">
-            <input type="submit" class="input-submit" value="Sign In">
+            <input type="submit" class="input-submit" value="Sign In" name="submit">
         </div>
         <div class="middle-text">
             <hr>

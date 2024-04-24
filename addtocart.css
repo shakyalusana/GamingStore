@@ -184,10 +184,6 @@ body.showCart .container {
   color: #fff;
 }
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   background-color: #333; /* Adjust background color as needed */
   color: #fff; /* Adjust text color as needed */
   padding: 20px; /* Adjust padding as needed */
@@ -289,10 +285,12 @@ body {
   transform: translateX(300%);
   width: 50%;
   height: 100%;
+  display: none;
 }
 
 .open-addtocart {
   transform: translateX(125%) !important;
+  display: block;
 }
 .addtocart table th,
 .addtocart table td {

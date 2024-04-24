@@ -102,7 +102,7 @@ if(isset($_POST['add_to_cart'])){
                                 while ($row = $result->fetch_assoc()) {
                                 echo <<< query
                                     <div class="card">
-                                        <form method="post" action="chair.php?id=$row[id]">
+                                        <form method="post" action="cart.php?id=$row[id]">
                                             <div class="card-image">
                                                 <img src="images/$row[image]" alt="mouse">
                                             </div>
@@ -116,7 +116,7 @@ if(isset($_POST['add_to_cart'])){
                                                 <input type="hidden" name="name" value="$row[name]">
                                                 <input type="hidden" name="price" value="$row[price]">
                                                 <input type="number" name="quantity" value=1>
-                                                <input type="submit" name="add_to_cart" id="add_to_cart" value="Add To Cart">
+                                                <input type="submit" name="add_to_cart" id="add_to_cart_$row[id]" value="Add To Cart">
                                             </div>    
                                         </form>
                                     </div>
@@ -159,7 +159,7 @@ if(isset($_POST['add_to_cart'])){
                             <td>".$value['quantity']."</td>
                             <td>".number_format($value['price']*$value['quantity'])."</td>
                             <td>
-                                <a href=chair.php?action=remove&id=".$value['id']." id='remove_".$value['id']."'> <!-- Updated ID -->
+                                <a href='javascript:void(0)' onclick='removeFromCart(".$value['id'].")'>
                                 <button>Remove</button>
                                 </a>
                             </td>
@@ -170,14 +170,14 @@ if(isset($_POST['add_to_cart'])){
                     $output .="
                     <tr>
                         <td colspan='3'>
-                            <form method='post' action='register.php'>
+                            <form method='post' action='email.php'>
                                 <input type='submit' name='submit' value='Check Out'>
-                            </form
+                            </form>
                         </td>
                         <td><b>Total Price</b></td>
                         <td>".number_format($total,2)."</td>
                         <td>
-                            <a href='chair.php?action=clearall'>
+                            <a href='javascript:void(0)' onclick='clearCart()'>
                                 <button>Clear All</button>
                             </a>
                         </td>
@@ -188,80 +188,61 @@ if(isset($_POST['add_to_cart'])){
 
                 echo $output;
             ?>
-            <?php 
-    
-                if(isset($_GET['action'])){
-                    if($_GET['action']=="clearall"){
-                        unset($_SESSION['cart']);
-                    }
-                    if($_GET['action']=="remove"){
-                        foreach($_SESSION['cart'] as $key => $value){
-                            if($value['id']==$_GET['id']){
-                                unset($_SESSION['cart'][$key]);
-                            }
-                        }
-                    }
-                }
-            
-            ?>
             
         </div>
     </div>
 <script>
-    const increment=document.getElementById('increment'),
-    add_to_cart=document.getElementById('add_to_cart'),
-    remove=document.getElementById('remove');
+    const increment=document.getElementById('increment');
     let totalQuantity = <?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>;
         increment.innerText = totalQuantity;
 
-        // Increment the total quantity when the "Add to Cart" button is clicked
-        add_to_cart.addEventListener("click", () => {
-            totalQuantity++;
-            increment.innerText = totalQuantity;
-            console.log(totalQuantity);
-        });
-
-        // Decrement the total quantity when the "Remove" button is clicked
-    //     remove.addEventListener("click", () => {
-    //         totalQuantity--;
-    //         increment.innerText = totalQuantity;
-    //         console.log(totalQuantity);
-    // });
-    for(let i = 0; i < <?php echo count($_SESSION['cart']); ?>; i++) {
-    const removeButton = document.getElementById('remove_' + i);
-    if(removeButton) {
-        removeButton.addEventListener("click", () => {
+        function removeFromCart(id) {
             totalQuantity--;
             increment.innerText = totalQuantity;
-            console.log(totalQuantity);
-        });
-    }
-}
+            const form = document.createElement('form');
+            form.method = 'get';
+            form.action = 'cart.php';
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'action';
+            input.value = 'remove';
+            const inputId = document.createElement('input');
+            inputId.type = 'hidden';
+            inputId.name = 'id';
+            inputId.value = id;
+            form.appendChild(input);
+            form.appendChild(inputId);
+            document.body.appendChild(form);
+            form.submit();
+        }
 
-const addtocart = document.getElementById('addtocart');
+        function clearCart() {
+            totalQuantity = 0;
+            increment.innerText = totalQuantity;
+            const form = document.createElement('form');
+            form.method = 'get';
+            form.action = 'cart.php';
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'action';
+            input.value = 'clearall';
+            form.appendChild(input);
+            document.body.appendChild(form);
+            form.submit();
+        }
 
-function toggleAddToCart() {
-    addtocart.classList.toggle("open-addtocart");
-}
+        function toggleAddToCart() {
+            addtocart.classList.toggle("open-addtocart");
+        }
+        // Increment the total quantity when the "Add to Cart" button is clicked
+        <?php
+        foreach($result as $row){
+            echo "document.getElementById('add_to_cart_$row[id]').addEventListener('click', () => {";
+            echo "totalQuantity++;";
+            echo "increment.innerText = totalQuantity;";
+            echo "});";
+        }
+        ?>
 </script>
-<!-- <div>
-<section class="footer">
-        <h4>Us</h4>
-        <p>We're tech enthusiasts on a mission to teach the world how to use and understand the tech in their lives. 
-            Phones, laptops, gadgets, apps, software, websites, services<br>
-            if it can make your life better, we'll show you all the tips, tricks, and techniques you need to know to
-            get the most out of what you have.</br>We bring you genuine pc parts as well as gift cards all in one place.</p>
-            <div class="icons">
-                <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/home?lang=en"><i class="fa fa-twitter"></i></a>
-                <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
-                <a href="https://www.youtube.com/"><i class="fa fa-youtube-play"></i></a>
-            </div>
-        <p>Made By Lusana <i class="fa fa-copyright"></i></p>
-
-</section>
-</div> -->
 </body>
 </html>
-
-
